@@ -72,6 +72,14 @@ class Application{
             'activePageId' => $pageId,
             'navigation' => $this->navigation
         );
-        $this->renderer->showViewScript(__DIR__.'/../../view/layout.phtml', $variables);
+        $this->renderer->showViewScript($this->getLayoutViewScript(), $variables);
+    }
+    
+    /**
+     * Gibt das ViewScript für das layout zurück
+     */
+    public function getLayoutViewScript()
+    {
+    	return __DIR__.'/../../view/layout.phtml';
     }
 }
